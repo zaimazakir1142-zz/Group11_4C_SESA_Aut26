@@ -1,0 +1,3 @@
+<?php require '../includes/db.php';header('Content-Type: application/json');$u=me();if(!$u){http_response_code(401);echo '{}';exit;}
+if($_SERVER['REQUEST_METHOD']=='POST'&&$u['role']=='volunteer'){q("UPDATE requests SET vol_lat=?,vol_lng=?,vol_time=NOW() WHERE volunteer_id=? AND status IN('assigned','picked')",[(float)$_POST['lat'],(float)$_POST['lng'],$u['id']]);echo '{"ok":1}';exit;}
+$r=q("SELECT r.status,r.vol_lat lat,r.vol_lng lng,r.vol_time t,v.name vname FROM requests r LEFT JOIN users v ON v.id=r.volunteer_id JOIN donations d ON d.id=r.donation_id WHERE r.id=? AND (r.receiver_id=? OR d.donor_id=? OR r.volunteer_id=? OR ?='admin')",[(int)($_GET['id']??0),$u['id'],$u['id'],$u['id'],$u['role']])->fetch();echo json_encode($r?:new stdClass);

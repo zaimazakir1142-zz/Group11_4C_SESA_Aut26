@@ -1,0 +1,909 @@
+
+/* =========================================
+   REPLATE - DASHBOARD STYLESHEET
+   Compatible with existing style.css
+========================================= */
+
+/* DASHBOARD VARIABLES */
+:root {
+    --dash-primary: #16a36a;
+    --dash-primary-dark: #087d50;
+    --dash-bg: #f7fbf8;
+    --dash-white: #ffffff;
+    --dash-text: #18352a;
+    --dash-muted: #718078;
+    --dash-border: #e5eee8;
+    --dash-shadow: 0 5px 20px rgba(0,0,0,.05);
+}
+
+/* =========================================
+   MAIN APP LAYOUT
+========================================= */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+    background: var(--dash-bg);
+}
+
+.app aside {
+    width: 250px;
+    min-width: 250px;
+    min-height: 100vh;
+    padding: 25px 17px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-right: 1px solid var(--dash-border);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.app aside .logo {
+    margin-bottom: 8px;
+    font-size: 25px;
+}
+
+.app aside > small {
+    margin: 30px 10px 15px;
+    color: #98a69e;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.app aside .nav {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    width: 100%;
+    padding: 12px 13px;
+    margin-bottom: 6px;
+    border-radius: 9px;
+    color: #52635a;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.app aside .nav:hover,
+.app aside .nav.on {
+    color: var(--dash-primary-dark);
+    background: #e8f7ef;
+}
+
+.app aside .sidefoot {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.app aside .mini {
+    padding: 16px;
+    background: #e8f7ef;
+    border: 1px solid #d7eee0;
+    border-radius: 12px;
+    line-height: 1.7;
+}
+
+.app aside .mini b {
+    display: inline-block;
+    color: var(--dash-primary-dark);
+}
+
+.app aside .mini span {
+    color: var(--dash-muted);
+    font-size: 11px;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.app main {
+    flex: 1;
+    width: calc(100% - 250px);
+    min-width: 0;
+    padding: 25px 32px 40px;
+    background: var(--dash-bg);
+}
+
+.app main > * {
+    max-width: 100%;
+}
+
+.topbar {
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 5px 15px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--dash-border);
+}
+
+.topbar span {
+    padding: 9px 15px;
+    background: white;
+    border: 1px solid var(--dash-border);
+    border-radius: 25px;
+    color: var(--dash-text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================
+   DASHBOARD HEADINGS
+========================================= */
+
+.app main h1 {
+    font-size: clamp(25px, 3vw, 32px);
+    margin-bottom: 8px;
+}
+
+.app main h2 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.app main h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.app main h4 {
+    font-size: 16px;
+}
+
+.app main p {
+    color: var(--dash-muted);
+}
+
+/* =========================================
+   WELCOME SECTION
+========================================= */
+
+.welcome,
+.welcome-box {
+    padding: 25px 28px;
+    margin-bottom: 25px;
+    background: linear-gradient(120deg,#e5f7ec,#f5fcf7);
+    border: 1px solid #dcefe3;
+    border-radius: 15px;
+}
+
+.welcome p,
+.welcome-box p {
+    margin-top: 7px;
+}
+
+/* =========================================
+   STATISTICS CARDS
+========================================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: 18px;
+    margin: 24px 0;
+}
+
+.stat {
+    min-width: 0;
+    padding: 21px;
+    background: white;
+    border: 1px solid var(--dash-border);
+    border-radius: 13px;
+    box-shadow: var(--dash-shadow);
+    transition: .2s;
+}
+
+.stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 24px rgba(0,0,0,.08);
+}
+
+.stat h3,
+.stat h4 {
+    color: var(--dash-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stat strong {
+    display: block;
+    margin: 9px 0;
+    color: var(--dash-primary-dark);
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.stat p {
+    font-size: 12px;
+}
+
+/* =========================================
+   PANELS
+========================================= */
+
+.panel {
+    min-width: 0;
+    padding: 23px;
+    margin-bottom: 23px;
+    background: white;
+    border: 1px solid var(--dash-border);
+    border-radius: 14px;
+    box-shadow: var(--dash-shadow);
+}
+
+.panel > h2,
+.panel > h3 {
+    margin-bottom: 18px;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+/* =========================================
+   ROW AND COLUMN
+========================================= */
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.row > * {
+    min-width: 0;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 20px;
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+table th {
+    padding: 14px 15px;
+    background: #f2f8f4;
+    color: #52635a;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+}
+
+table td {
+    padding: 14px 15px;
+    color: #52635a;
+    font-size: 13px;
+    border-bottom: 1px solid var(--dash-border);
+    vertical-align: middle;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tbody tr:hover {
+    background: #f9fcfa;
+}
+
+/* =========================================
+   STATUS BADGES
+========================================= */
+
+.badge,
+.status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 11px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.badge.success,
+.status.success,
+.status.approved {
+    color: #087d50;
+    background: #e5f8ed;
+}
+
+.badge.pending,
+.status.pending {
+    color: #a66b08;
+    background: #fff5dc;
+}
+
+.badge.danger,
+.status.danger,
+.status.rejected {
+    color: #c0392b;
+    background: #fdebea;
+}
+
+.badge.info,
+.status.info {
+    color: #2472ae;
+    background: #e8f3ff;
+}
+
+/* =========================================
+   FORMS AND SEARCH
+========================================= */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 150px;
+}
+
+.app main input,
+.app main select,
+.app main textarea {
+    max-width: 100%;
+    padding: 11px 13px;
+    background: white;
+    border: 1px solid var(--dash-border);
+    border-radius: 8px;
+    outline: none;
+}
+
+.app main input:focus,
+.app main select:focus,
+.app main textarea:focus {
+    border-color: var(--dash-primary);
+    box-shadow: 0 0 0 3px rgba(22,163,106,.08);
+}
+
+.app main label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--dash-text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.app main .form-group {
+    margin-bottom: 18px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.app main .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.app main button {
+    cursor: pointer;
+}
+
+.app main .btn:hover {
+    transform: translateY(-2px);
+}
+
+.app main .btn.danger {
+    background: #dc5148;
+    border-color: #dc5148;
+    color: white;
+}
+
+.app main .btn.small {
+    padding: 7px 12px;
+    font-size: 11px;
+}
+
+/* =========================================
+   FOOD MANAGEMENT
+========================================= */
+
+.food-list {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 18px;
+}
+
+.food-list .card {
+    overflow: hidden;
+    background: white;
+    border: 1px solid var(--dash-border);
+    border-radius: 12px;
+}
+
+.food-list .card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.food-list .card .bd {
+    padding: 15px;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-state {
+    padding: 45px 20px;
+    text-align: center;
+    background: white;
+    border: 1px dashed #cbded1;
+    border-radius: 12px;
+}
+
+.empty-state h3 {
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    font-size: 13px;
+}
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.pagination a,
+.pagination span {
+    padding: 8px 13px;
+    background: white;
+    border: 1px solid var(--dash-border);
+    border-radius: 7px;
+    color: var(--dash-text);
+    font-size: 13px;
+}
+
+.pagination .active {
+    color: white;
+    background: var(--dash-primary);
+    border-color: var(--dash-primary);
+}
+
+/* =========================================
+   ALERT MESSAGES
+========================================= */
+
+.alert {
+    padding: 13px 16px;
+    margin-bottom: 18px;
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+.alert.success {
+    color: #087d50;
+    background: #e5f8ed;
+    border: 1px solid #c9ecd7;
+}
+
+.alert.error {
+    color: #b52e28;
+    background: #fdebea;
+    border: 1px solid #f5d0ce;
+}
+
+.alert.warning {
+    color: #91600b;
+    background: #fff5dc;
+    border: 1px solid #f5e5b8;
+}
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px;
+    background: white;
+    border: 1px solid var(--dash-border);
+    border-radius: 13px;
+}
+
+.profile-avatar {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #e8f7ef;
+    color: var(--dash-primary-dark);
+    font-size: 25px;
+    font-weight: 800;
+}
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media(max-width:1100px) {
+
+    .stats {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    .food-list {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    .app main {
+        padding: 22px;
+    }
+
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media(max-width:768px) {
+
+    .app {
+        flex-direction: column;
+    }
+
+    .app aside {
+        position: relative;
+        top: auto;
+        width: 100%;
+        min-width: 0;
+        min-height: auto;
+        height: auto;
+        padding: 16px;
+        border-right: none;
+        border-bottom: 1px solid var(--dash-border);
+    }
+
+    .app aside > small {
+        margin: 15px 8px 10px;
+    }
+
+    .app aside .nav {
+        display: inline-flex;
+        width: auto;
+        padding: 9px 12px;
+        margin: 3px;
+        font-size: 12px;
+    }
+
+    .app aside .sidefoot {
+        margin-top: 10px;
+    }
+
+    .app aside .mini {
+        margin: 10px 0;
+    }
+
+    .app main {
+        width: 100%;
+        padding: 18px 15px 30px;
+    }
+
+    .topbar {
+        justify-content: flex-start;
+        margin-bottom: 18px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 17px;
+    }
+
+    .food-list {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:480px) {
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat {
+        padding: 14px;
+    }
+
+    .stat strong {
+        font-size: 23px;
+    }
+
+    .stat h3,
+    .stat h4 {
+        font-size: 11px;
+    }
+
+    .food-list {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome,
+    .welcome-box {
+        padding: 19px;
+    }
+
+    .app main h1 {
+        font-size: 25px;
+    }
+
+    .row {
+        align-items: flex-start;
+    }
+
+    .search-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box input,
+    .search-box select {
+        width: 100%;
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+    .profile-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+/* =================================
+   DONOR DASHBOARD EXTRA STYLES
+================================= */
+
+.eyebrow {
+    color: #16a36a;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.page {
+    color: #18352a;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 8px 0;
+}
+
+.sub {
+    color: #718078;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 6px 0 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin: 24px 0;
+}
+
+.stat {
+    background: #fff;
+    border: 1px solid #e5eee8;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 4px 15px rgba(20, 70, 45, 0.04);
+}
+
+.stat span {
+    display: block;
+    color: #718078;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.stat b {
+    display: block;
+    color: #18352a;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.panel {
+    background: #fff;
+    border: 1px solid #e5eee8;
+    border-radius: 15px;
+    padding: 22px;
+    margin: 22px 0;
+    box-shadow: 0 4px 15px rgba(20, 70, 45, 0.04);
+}
+
+.panel h3 {
+    color: #18352a;
+    font-size: 18px;
+    margin: 0 0 18px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid #edf2ee;
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.row > div:first-child {
+    flex: 1;
+    min-width: 150px;
+}
+
+.row b {
+    display: block;
+    color: #18352a;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.row small {
+    display: block;
+    color: #718078;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.pill {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #e8f7ef;
+    color: #087d50;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.pill.o {
+    background: #fff4df;
+    color: #a66b00;
+}
+
+.sm {
+    border: none;
+    border-radius: 7px;
+    background: #16a36a;
+    color: #fff;
+    padding: 8px 13px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.sm:hover {
+    background: #087d50;
+}
+
+.sm.red {
+    background: #fff0f0;
+    color: #d63b3b;
+}
+
+.sm.red:hover {
+    background: #d63b3b;
+    color: #fff;
+}
+
+.panel form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+@media (max-width: 1000px) {
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .page {
+        font-size: 23px;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    .row {
+        align-items: flex-start;
+    }
+
+    .row form {
+        width: 100%;
+    }
+}

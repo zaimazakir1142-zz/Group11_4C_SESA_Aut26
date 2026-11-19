@@ -1,0 +1,165 @@
+
+/* =====================================
+   REPLATE - RESPONSIVE DESIGN
+===================================== */
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .app aside {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .app main {
+        min-width: 0;
+        padding: 20px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    /* DASHBOARD LAYOUT */
+    .app {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .app aside {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        position: relative;
+        padding: 15px;
+    }
+
+    .app aside .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .app aside .nav a {
+        flex: 1 1 130px;
+    }
+
+    .app main {
+        width: 100%;
+        min-width: 0;
+        padding: 16px;
+    }
+
+    /* TOPBAR */
+    .topbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* STATISTICS */
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .stat {
+        padding: 15px;
+    }
+
+    .stat b {
+        font-size: 23px;
+    }
+
+    /* DASHBOARD GRID */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* PANELS */
+    .panel {
+        padding: 16px;
+        overflow-x: auto;
+    }
+
+    /* ROWS */
+    .row {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    /* BUTTONS */
+    .btn {
+        max-width: 100%;
+    }
+
+    /* TABLES */
+    table {
+        min-width: 550px;
+    }
+
+    /* FORMS */
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .page {
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .panel {
+        padding: 13px;
+        margin: 15px 0;
+    }
+
+    .stat {
+        padding: 16px;
+    }
+
+    .app main {
+        padding: 12px;
+    }
+
+    .app aside .nav a {
+        flex: 1 1 100%;
+    }
+
+    .row form {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .sm {
+        margin: 3px 2px;
+    }
+}
